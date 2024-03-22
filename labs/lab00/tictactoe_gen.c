@@ -99,7 +99,7 @@ bool has_free_cell(char board[SIZE][SIZE]) {
 
 
 int main(void) {
-    printf("TicTacToe [InCoMpLeTo :'(]\n");
+    printf("TicTacToe [Completo :D]\n");
 
     char board[SIZE][SIZE];
 

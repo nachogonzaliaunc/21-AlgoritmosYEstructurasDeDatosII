@@ -26,7 +26,7 @@ unsigned int array_from_stdin(int array[], unsigned int max_size) {
             exit(EXIT_FAILURE);
         }
     }
-    // salto de linea para el comando crtl+D
+    // Newline after the ctrl+D command
     printf("\n");
 
     return length;

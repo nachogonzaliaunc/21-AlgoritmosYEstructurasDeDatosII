@@ -42,24 +42,31 @@ struct bound_data check_bound(int value, int arr[], unsigned int length) {
 
 
 int main(void) {
-    int a[ARRAY_SIZE] = { 0, 0, 0, 0 };
+    int a[ARRAY_SIZE];
+
+    // ask the user to input the length of the array
+    unsigned int length = printf("Ingrese el largo del arreglo: ");
+    scanf("%u", &length);
+
+    printf("\n");
 
     // ask the user to input the elements of the array
-    for (int i = 0; i < ARRAY_SIZE; i++) {
+    for (unsigned int i = 0; i < length; i++) {
         printf("Ingrese el valor de la posicion %d: ", i);
         scanf("%d", &a[i]);
     }
 
     // print the array
-    printf("El arreglo ingresado es: [");
-    for (unsigned int i = 0; i < ARRAY_SIZE-1; i++) {
+    printf("\nEl arreglo ingresado es: [");
+    for (unsigned int i = 0; i < length-1; i++) {
         printf("%d, ", a[i]);
     }
-    printf("%d]\n", a[ARRAY_SIZE-1]);
+    printf("%d]\n\n", a[length-1]);
 
     // ask the user to the value for compare
     int value = printf("Ingrese el valor a comparar: ");
     scanf("%d", &value);
+    printf("\n");
 
     struct bound_data result = check_bound(value, a, ARRAY_SIZE);
 

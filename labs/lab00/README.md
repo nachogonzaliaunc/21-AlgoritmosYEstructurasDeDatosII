@@ -51,34 +51,24 @@ Luego ejecute el programa con el siguiente comando:
 ```bash
 make run_bounds
 ```
-La salida por pantalla debe ser la siguiente: *`Bienvenido/a, a continuación se le solicitaran los datos necesarios para el programa.`*
+El programa le solicitará que ingrese los valores para su arreglo, mediante el mensaje de *`Ingrese el valor de la posicion x:`*, usted deberá ingresar el valor deseado y pulsar la tecla *Enter*.
 
-Luego el programa le solicitará que ingrese el tamaño su arreglo, mediante el mensaje de *`Ingrese el tamaño para su array: `*, usted deberá ingresar el tamaño deseado y pulsar la tecla *Enter*, en caso de colocar un numero mejor a 0 (cero) se le solicitará un nuevo valor.
-
-Después el programa le solicitará que ingrese los valores para su arreglo, mediante el mensaje de *`Ingrese su nro. 0: `*, usted deberá ingresar el valor deseado y pulsar la tecla *Enter*.
-
-Una vez que haya ingresado todos los valores para su arreglo, el programa mostrará en arreglo ingresado y le solicitará que ingrese un valor para verificar con **`check_bound()`**, mediante el mensaje de *`Ingrese el nro. a comparar: `*, usted deberá ingresar el valor deseado y pulsar la tecla *Enter*.
+Una vez que haya ingresado todos los valores para su arreglo, el programa mostrará en arreglo ingresado y le solicitará que ingrese un valor para verificar con **`check_bound()`**, mediante el mensaje de *`Ingrese el valor a comparar: `*, usted deberá ingresar el valor deseado y pulsar la tecla *Enter*.
 
 Finalmente el programa mostrará por pantalla si el valor que ingresó el usuario es *cota superior*, *cota inferior*, *mínimo* o *máximo*. Solo en caso de ser mínimo o máximo (esto significa que el valor se encuentra en el arreglo) mostrará por pantalla la posición donde se encontró el elemento.
 
 #### Ejemplo
 ```bash
-Bienvenido/a, a continuación se le solicitaran los datos necesarios para el programa.
-Ingrese el tamaño para su array: -2
-Por favor ingrese un valor mayor a 0.
-Ingrese el tamaño para su array: 0
-Por favor ingrese un valor mayor a 0.
-Ingrese el tamaño para su array: 4
-Ingrese su nro. 0: 0
-Ingrese su nro. 1: -1
-Ingrese su nro. 2: 9
-Ingrese su nro. 3: 4
+Ingrese el valor de la posicion 0: 0
+Ingrese el valor de la posicion 1: -1
+Ingrese el valor de la posicion 2: 9
+Ingrese el valor de la posicion 3: 4
 
-Tu array es: [0, -1, 9, 4]
+El arreglo ingresado es: [0, -1, 9, 4]
 
-Ingrese el nro. a comparar: 9
+Ingrese el valor a comparar: 9
 
-El valor 9 está en el array y es el máximo. Se encuentra en la posición 2.
+El valor es maximo y existe en el arreglo en la posicion 2
 ```
 
 

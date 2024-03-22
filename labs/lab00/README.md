@@ -59,6 +59,8 @@ Finalmente el programa mostrará por pantalla si el valor que ingresó el usuari
 
 #### Ejemplo
 ```bash
+Ingrese el largo del arreglo: 4
+
 Ingrese el valor de la posicion 0: 0
 Ingrese el valor de la posicion 1: -1
 Ingrese el valor de la posicion 2: 9

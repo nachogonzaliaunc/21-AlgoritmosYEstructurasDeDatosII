@@ -3,7 +3,7 @@
 
 # Laboratorio 0: Repaso de C
 <p style="color:gray; font-size: 14px;">
-    -Revisión 2024: Marco Rocchietti
+    - Revisión 2024: Marco Rocchietti
 </p>
 
 ## Objetivos

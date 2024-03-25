@@ -1,5 +1,5 @@
 <h1 align="center" style="font-weight:bold;">Algoritmos y Estructuras de Datos II</h1>
-<p align="center" style="color:gray; font-size: 20px; font-weight:bold;">TALLER - 15 de marzo 2024</p>
+<p align="center" style="color:gray; font-size: 20px; font-weight:bold;">TALLER - 14 de marzo 2024</p>
 
 # Laboratorio 0: Repaso de C
 <p style="color:gray; font-size: 14px;">

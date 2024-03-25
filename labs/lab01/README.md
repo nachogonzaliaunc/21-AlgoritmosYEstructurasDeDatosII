@@ -181,7 +181,7 @@ void array_swap(int a[], unsigned int i, unsigned int j);
 ```
 que dado un array `a[]` y dos índices `i`, `j` debe intercambiar los valores de dichas posiciones.
 
-Modificar **[main.c](ej5/main.c)** e invertir el array antes de mostrarlo por pantalla. Para ello pensar u algoritmo que utilice sucesivas llamadas a **`array_swap()`** para ir intercambiando los elementos del array hasta lograr invertirlo. El programa resultante debería comportarse de la siguiente manera:
+Modificar **[main.c](ej6/main.c)** e invertir el array antes de mostrarlo por pantalla. Para ello pensar u algoritmo que utilice sucesivas llamadas a **`array_swap()`** para ir intercambiando los elementos del array hasta lograr invertirlo. El programa resultante debería comportarse de la siguiente manera:
 ```bash
 ./reader ../input/example-easy.in
 [5, 4, 3, 2, 1]

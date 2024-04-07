@@ -94,3 +94,4 @@ Determinar posibles valores de K y L de manera que el procedimiento tenga orden:
 Escribir algoritmos cuyas complejidades sean (asumiendo que el lenguaje no tiene multiplicaciones ni logaritmos, o sea que no podés escribir **for** i:= 1 **to** n² + 2log n **do**...**od**):
 - a) n² + 2log n
 - b) n² log n
+- c) 3ⁿ

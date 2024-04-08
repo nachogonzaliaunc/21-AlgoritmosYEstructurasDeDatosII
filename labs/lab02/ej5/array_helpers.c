@@ -25,7 +25,7 @@ unsigned int array_value_count(fixstring a[], unsigned int length, fixstring val
 }
 
 void array_dump(fixstring a[], unsigned int length) {
-    fprintf(stdout, "%u\n", length);
+    // fprintf(stdout, "%u\n", length);
     for (unsigned int i = 0; i < length; i++) {
         fprintf(stdout, "%s", a[i]);
         if (i < length - 1) {

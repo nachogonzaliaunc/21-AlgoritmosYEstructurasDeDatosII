@@ -59,15 +59,32 @@ int main(int argc, char *argv[]) {
     fixstring copy[MAX_SIZE];
     array_copy(copy, array, length);
 
+    /* sort alphabetically the array */
     quick_sort(array, length);
 
     /* show the ordered array in the screen */
+    printf("The array alphabetically ordered is:\n");
     array_dump(array, length);
 
-    /* check if it is sorted */
+    /* check if it is sorted alphabetically */
     assert(array_is_sorted(array, length));
 
     /* check if it is a permutation of original */
     assert(array_is_permutation_of(copy, array, length));
+
+
+    /* sort the array by the strings length */
+    quick_sort_length(array, length);
+
+    /* show the ordered array in the screen */
+    printf("\nThe array ordered by the strings length is:\n");
+    array_dump(array, length);
+
+    /* check if it is sorted by the strings length */
+    assert(array_is_sorted_length(array, length));
+
+    /* check if it is a permutation of original */
+    assert(array_is_permutation_of(copy, array, length));
+
     return EXIT_SUCCESS;
 }

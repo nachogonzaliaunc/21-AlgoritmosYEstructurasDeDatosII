@@ -70,6 +70,8 @@ int main(int argc, char *argv[]) {
     printf("statistics for selection_sort\n");
     printf("time elapsed=%g,    comparisons: %10u,    swaps: %10u\n", calculate_elapsed_time(), comparisons_number(), swaps_number());
 
+    /* create a copy of the array */
+    array_copy(copy, array, length);
 
     /* reset counters and set time */
     reset_comparisons_counter();
@@ -83,6 +85,9 @@ int main(int argc, char *argv[]) {
     printf("statistics for insertion_sort\n");
     printf("time elapsed=%g,    comparisons: %10u,    swaps: %10u\n", calculate_elapsed_time(), comparisons_number(), swaps_number());
 
+
+    /* create a copy of the array */
+    array_copy(copy, array, length);
 
     /* reset counters and set time */
     reset_comparisons_counter();

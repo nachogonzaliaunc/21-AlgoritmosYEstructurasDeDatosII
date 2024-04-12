@@ -21,9 +21,11 @@ unsigned int data_from_file(const char *path, unsigned int indexes[], char lette
     }
     // check if the indexes values are correct
     for (unsigned int i = 0; i < length; i++) {
-        if (indexes[i] > max_size) {
-            printf("ERROR: index value %u are larger than the maximum alowed\n", indexes[i]);
-            exit(EXIT_FAILURE);
+        for (unsigned int j = 0; j < length; j++) {
+            if(indexes[i] >= length) {
+                printf("ERROR: index value %u are larger than the word length\n", indexes[i]);
+                exit(EXIT_FAILURE);
+            }
         }
     }
 

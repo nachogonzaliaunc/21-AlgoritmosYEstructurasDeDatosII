@@ -93,8 +93,21 @@ int main(int argc, char *argv[]) {
     month_t month_with_most_rainfall[YEARS];
     max_prec_per_month(array, month_with_most_rainfall);
     /* dump the results */
+    char *month;
     for (unsigned int year = 0; year < YEARS; year++) {
-        printf("month with most amount of rainfall of %d: %d\n", year+1980, month_with_most_rainfall[year]+1);
+        if(month_with_most_rainfall[year] == 0) month = "january";
+        else if(month_with_most_rainfall[year] == 1) month = "february";
+        else if(month_with_most_rainfall[year] == 2) month = "march";
+        else if(month_with_most_rainfall[year] == 3) month = "april";
+        else if(month_with_most_rainfall[year] == 4) month = "may";
+        else if(month_with_most_rainfall[year] == 5) month = "june";
+        else if(month_with_most_rainfall[year] == 6) month = "july";
+        else if(month_with_most_rainfall[year] == 7) month = "august";
+        else if(month_with_most_rainfall[year] == 8) month = "september";
+        else if(month_with_most_rainfall[year] == 9) month = "october";
+        else if(month_with_most_rainfall[year] == 10) month = "november";
+        else month = "december";
+        printf("month with most amount of rainfall of %d: %s\n", year+1980, month);
     }
 
     return (EXIT_SUCCESS);

@@ -58,7 +58,9 @@ Para probar esta parte sin completar la Parte B, se puede modificar temporalment
 ### Parte B: *Reconstrucción*
 Los archivos guardan las letras de un texto que se puede reconstruir ubicando cada letra en el índice especificado. En el arreglo **sorted[]** de **[main.c](ej1/main.c)** se debe dejar dicha reconstrucción. Entonces para el ejemplo `phrase-basic.in` se puede ver que el texto dice **"hola!"**. Se debe construir un programa que funcione de la siguiente manera:
 ```bash
-$ ./readprhase phrase-basic.in
+$ make comp_ej1
+$ cd ej1/
+$ ./readphrase phrase-basic.in
 "hola!"
 ```
 `No se debe utilizar un algoritmo de ordenación para reconstruir la frase` (hacer eso solo complicaría
@@ -66,6 +68,11 @@ las cosas). Debe funcionar también para el resto de los archivos de ejemplo **p
 
 En **[main.c](ej1/main.c)** se encuentra un esqueleto del ejercicio con una única función auxiliar implementada `dump()` que muestra el contenido de un arreglo de caracteres por pantalla. Se pueden agregar tantas funciones como se considere necesario y también agregar módulos si contribuye a mejorar la calidad del código. Para el manejo de parámetros de la función `main()` se puede reutilizar el código de laboratorios anteriores.
 
+Para eliminar ejecutables y archivos .o
+```bash
+$ cd ..
+$ make clean_ej1
+```
 
 
 ## Ejercicio 2: *Arreglos Multidimensionales*
@@ -87,8 +94,8 @@ La primera tarea consiste en completar el procedimiento de carga de datos en el 
 
 Una vez completada la lectura de datos se puede verificar si la carga funciona compilando,
 ```bash
-$ gcc -Wall -Werror -Wextra -pedantic -std=c99 -c array_helpers.c weather.c main.c
-$ gcc -Wall -Werror -Wextra -pedantic -std=c99 array_helpers.o weather.o main.o -o weather
+$ make comp_ej2
+$ cd ej2/ 
 ```
 y luego ejecutar
 ```bash
@@ -104,6 +111,11 @@ El programa **diff** (que ya viene instalado en linux) realiza una comparación 
 
 Si se compila el código original sin hacer modificaciones usando el flag **`-Werror`**, no compilará (ver explicación en Ejercicio 2). A modo de prueba, compilar el código original sin usar ese flag y ejecutar el programa resultante. ¿Qué se puede observar en la salida del programa?
 
+Para eliminar ejecutables y archivos .o
+```bash
+$ cd ..
+$ make clean_ej2
+```
 
 ### Parte B: *Análisis de los datos*
 Construir una librería **`weather_utils`** que conste de los siguientes archivos:
@@ -148,7 +160,9 @@ Al igual que en el Laboratorio 2 hay un módulo que se encarga de manejar los ar
 
 Para compilar el ejercicio, primero se debe ejecutar
 ```bash
-$ gcc -Wall -Werror -Wextra -pedantic -std=c99 -c helpers.c sort.c
+$ make comp_ej3
+$ cd ej3/
+$ ./mysort ../input/atp-players2022.in
 ```
 Si se compila el código original sin modificaciones, no compilará. ¿Por qué?. Si bien aparecen algunos errores por pantalla, estos son en realidad warnings del compilador. El compilador “advierte” que hay situaciones en el código que podrán llevar a errores de codificación. En este caso en particular dichos errores **<u>se sabe</u>** que corresponden a funciones incompletas en el código, entonces **<u>sólo en este caso</u>** se puede desactivar el flag **`-Werror`** que hace que los warnings de compilación sean tratados como errores.
 
@@ -167,3 +181,9 @@ $ ./mysort ../input/atp-players2022.in > atp-players2022.out
 $ diff ../input/atp-players2022.in atp-players2022.out
 ```
 Este ejercicio consiste entonces en realizar los cambios necesarios en el archivo **[sort.c](ej3/sort.c)** para ordenar el arreglo cargado, de modo que el listado de salida esté ordenado según el puesto que el jugador tiene en el ranking. Se puede reutilizar el código del laboratorio anterior realizando las modificaciones que se consideren pertinentes y utilizar aquí cualquiera de los algoritmos de ordenación vistos en clase: *insertion sort, selection sort, quick sort*, etc.
+
+Para eliminar ejecutables y archivos .o
+```bash
+$ cd ..
+$ make clean_ej3
+```

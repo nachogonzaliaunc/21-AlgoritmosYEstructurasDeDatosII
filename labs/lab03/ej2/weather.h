@@ -5,7 +5,7 @@
 
 #ifndef _WEATHER_H
 #define _WEATHER_H
-#define EXPECTED_WEATHER_FILE_FORMAT "%d %d %d %u %u %u"
+#define EXPECTED_WEATHER_FILE_FORMAT " %d %d %d %u %u %u "
 #include <stdio.h>
 
 /** @brief Type used to represent a weather mesuarement.*/

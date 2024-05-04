@@ -72,8 +72,8 @@ int main(int argc, char *argv[]){
 
     /* show average close price and max price of the company actions */
     /* META */
-    float avg = avg_close_price(META, table);
-    unsigned int max = max_volume(META, table);
+    price avg = avg_close_price(META, table);
+    volume max = max_volume(META, table);
     printf("META ---> Average: %.2f MaxVolume: %u\n", avg, max);
 
     /* same for TSLA */

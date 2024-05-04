@@ -84,8 +84,8 @@ void array_from_file(StockTable table, const char *filepath) {
         readlines++;
     }
     // only 10 rounds per company
-    if(readlines > NR_STOCKS*NR_COMPANY) {
-        fprintf(stderr, "Max number of rounds per company are 10.\n");
+    if(readlines != NR_STOCKS*NR_COMPANY) {
+        fprintf(stderr, "Invalid data: must be 10 rounds, 4 companies.\n");
         exit(EXIT_FAILURE);
     }        
 

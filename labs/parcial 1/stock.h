@@ -17,15 +17,15 @@ typedef unsigned int natural;
 /** @brief Type used to represent stock data.*/
 /*Year-Month-Day,Open,High,Low,Close,Adj Close,Volume*/
 typedef struct _stock {
-  natural year;
-  natural month;
-  natural day;
-  price open;
-  price high;
-  price low;
-  price close;
-  price adj;
-  volume vol;
+    natural year;
+    natural month;
+    natural day;
+    price open;
+    price high;
+    price low;
+    price close;
+    price adj;
+    volume vol;
 } Stock;
 
 /**

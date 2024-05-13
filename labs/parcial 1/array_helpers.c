@@ -41,9 +41,9 @@ void array_dump(StockTable t){
 }
 
 price avg_close_price(company_t c, StockTable t){
-    price res = 0;
-    for(unsigned int i = 0; i < NR_STOCKS; i++) { res += t[c][i].close; }
-    return (res / NR_STOCKS);
+    price sum = 0;
+    for(unsigned int i = 0; i < NR_STOCKS; i++) { sum += t[c][i].close; }
+    return (sum / NR_STOCKS);
 }
 
 volume max_volume(company_t c, StockTable t){
@@ -65,15 +65,19 @@ void array_from_file(StockTable table, const char *filepath) {
     }
     
     unsigned int readlines = 0u;
-    while (!feof(file)) {
-        char symbol[4];
-        unsigned round;
+    while (!feof(file) && readlines < MAX_FILELINES) {
+        char symbol[5];
+        unsigned int round;
         company_t c;
 
         int res = fscanf(file, " %s %u ", symbol, &round);
         if (res != 2) {
-        fprintf(stderr, "1-Invalid stock data.\n");
-        exit(EXIT_FAILURE);
+            fprintf(stderr, "1-Invalid stock data.\n");
+            exit(EXIT_FAILURE);
+        }
+        if (round < 1 || round > 10) {
+            fprintf(stderr, "2-Invalid round.\n");
+            exit(EXIT_FAILURE);
         }
 
         c = get_company_enum(symbol);
@@ -83,8 +87,7 @@ void array_from_file(StockTable table, const char *filepath) {
 
         readlines++;
     }
-    // only 10 rounds per company
-    if(readlines != NR_STOCKS*NR_COMPANY) {
+    if(readlines != MAX_FILELINES) {
         fprintf(stderr, "Invalid data: must be 10 rounds, 4 companies.\n");
         exit(EXIT_FAILURE);
     }        

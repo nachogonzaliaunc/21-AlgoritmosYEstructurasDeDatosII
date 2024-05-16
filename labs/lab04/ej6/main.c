@@ -76,5 +76,7 @@ int main(int argc, char *argv[]) {
         printf("Parentheses mismatch.\n");
     }
 
+    fclose(file);
+
     return (EXIT_SUCCESS);
 }

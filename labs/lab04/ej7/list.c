@@ -4,8 +4,7 @@
 
 #include "list.h"
 
-struct node_of_T
-{
+struct node_of_T {
     list_elem elem;
     struct node_of_T *next;
 };
@@ -29,6 +28,7 @@ list destroy(list l) {
     while (l != NULL) {
         p = l;
         l = l->next;
+        p->next = NULL;
         free(p);
     }
     return l;
@@ -45,6 +45,7 @@ list tail(list l) {
     assert((l != NULL) && "is empty list");
     list p = l;
     l = l->next;
+    p->next = NULL;
     free(p);
     return l;
 }
@@ -101,6 +102,7 @@ list take(list l, int n) {
         while(l != NULL) {
             p = l;
             l = l->next;
+            p->next = NULL;
             free(p);
         }
     }
@@ -114,6 +116,7 @@ list take(list l, int n) {
         while(p != NULL) {
             q = p;
             p = p->next;
+            q->next = NULL;
             free(q);
         }
     }
@@ -128,6 +131,7 @@ list drop(list l, int n) {
         while(l != NULL && i < n) {
             p = l;
             l = l->next;
+            p->next = NULL;
             free(p);
             i++;
         }

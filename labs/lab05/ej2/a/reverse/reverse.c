@@ -59,7 +59,7 @@ int main(int argc, char *argv[]) {
     stack s = stack_empty();
 
     /* push array values on to stack */
-    for(unsigned int i = 0; i < length; i++) {
+    for(int i = length - 1; i >= 0; i--) {
         s = stack_push(s,array[i]);
     }
 

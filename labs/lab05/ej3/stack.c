@@ -8,15 +8,23 @@ struct _s_stack {
     unsigned int capacity;  // Capacidad actual del arreglo elems
 };
 
+bool invrep(stack s) {
+    // if s.elems = NULL -> size must be 0
+    // if s.elems != NULL -> size must be higher than 0
+    return ((s->elems == NULL && s->size == 0) || (s->elems != NULL && s->size > 0u));
+}
+
 stack stack_empty() {
     stack s = malloc(sizeof(struct _s_stack));
     s->elems = NULL;
     s->size = 0u;
     s->capacity = 0u;
+    assert(invrep(s));
     return s;
 }
 
 stack stack_push(stack s, stack_elem e) {
+    assert(invrep(s));
     if(s->elems == NULL) {
         s->capacity = 1u;
         s->elems = calloc(s->capacity, sizeof(stack_elem));
@@ -29,41 +37,38 @@ stack stack_push(stack s, stack_elem e) {
     s->elems[s->size] = e;
     s->size++;
 
+    assert(invrep(s));
     return s;
 }
 
 stack stack_pop(stack s) {
-    assert(s->size != 0);
+    assert(invrep(s) && s->size != 0);
     s->size--;
+    assert(invrep(s));
     return s;
 }
 
-unsigned int stack_size(stack s) {
-    return s->size;
-}
+unsigned int stack_size(stack s) { return s->size; }
 
 stack_elem stack_top(stack s) {
-    assert(s->size != 0);
+    assert(invrep(s) && s->size != 0);
     return s->elems[s->size-1u];
 }
 
-bool stack_is_empty(stack s) {
-    return (s->size == 0u);
-}
+bool stack_is_empty(stack s) { return (s->size == 0u); }
 
 stack_elem *stack_to_array(stack s) {
-    assert(s->size != 0);
+    assert(invrep(s) && s->size != 0);
     unsigned int size = s->size;
     stack_elem *array = NULL;
 
     if(s->elems != NULL) {
         array = calloc(size, sizeof(stack_elem));
-        for(unsigned int i = 0; i < size; i++) {
-            array[i] = stack_top(s);
-            s = stack_pop(s);
+        for(int i = size - 1; i >= 0; i--) {
+            array[i] = s->elems[i];
         }
     }
-
+    assert(invrep(s));
     return array;
 }
 

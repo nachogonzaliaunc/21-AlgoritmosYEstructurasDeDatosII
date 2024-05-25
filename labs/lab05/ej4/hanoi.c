@@ -6,10 +6,10 @@
 #include "hanoi.h"
 
 static void move(unsigned int current,
-        hanoi_t hanoi,
-        stack *source_ptr,
-        stack *target_ptr,
-        stack *aux_ptrz
+                 hanoi_t hanoi,
+                 stack *source_ptr,
+                 stack *target_ptr,
+                 stack *aux_ptrz
 );
 
 static void print(stack source, stack aux, stack target, unsigned int disk_count);

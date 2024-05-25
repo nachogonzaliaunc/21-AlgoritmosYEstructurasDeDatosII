@@ -5,7 +5,7 @@
 struct _s_stack {
     stack_elem elem;
     struct _s_stack *next;
-    unsigned int size;  // add this tuple
+    unsigned int size;      // add this tuple
 };
 
 stack stack_empty() {
@@ -22,31 +22,28 @@ stack stack_push(stack s, stack_elem e) {
     p->size = (s == NULL) ? 1 : s->size + 1;
     p->next = s;
 
-    s = p;
+    return p;
+}
 
+stack stack_pop(stack s) {
+    assert(s != NULL);
+    stack p = s;
+    s = s->next;
+    s->size--;
+    free(p);
     p = NULL;
 
     return s;
 }
 
-stack stack_pop(stack s) {
-    assert(s != NULL);
-    s->size--;
-    return s->next;
-}
-
-unsigned int stack_size(stack s) {
-    return (s == NULL) ? 0 : s->size;
-}
+unsigned int stack_size(stack s) { return (s == NULL) ? 0 : s->size; }
 
 stack_elem stack_top(stack s) {
     assert(s != NULL);
     return s->elem;
 }
 
-bool stack_is_empty(stack s) {
-    return (s == NULL);
-}
+bool stack_is_empty(stack s) { return (s == NULL); }
 
 stack_elem *stack_to_array(stack s) {
     assert(s != NULL);
@@ -56,9 +53,9 @@ stack_elem *stack_to_array(stack s) {
     if(s != NULL) {
         arr = (stack_elem *)calloc(s->size, sizeof(stack_elem));
         
-        for(unsigned int i = 0; i < size; i++) {
-            arr[i] = stack_top(s);
-            s = stack_pop(s);
+        for(int i = size - 1; i >= 0; i--) {
+            arr[i] = s->elem;
+            s = s->next;
         }
     }
     return arr;

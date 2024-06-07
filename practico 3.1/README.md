@@ -12,7 +12,10 @@ si el valor de cada moneda es al menos el doble de la anterior, y la moneda de m
 Para cada uno de los siguientes ejercicios:
 • Describir cuál es el criterio de selección.
 • En qué estructuras de datos se representará la información del problema?
-• Explicar el algoritmo, es decir, los pasos a seguir para obtener el resultado. No se pide que se "lea" el algoritmo ("se define una variable x", "se declara un for"), si no que se explique ("se recorre la lista/el arreglo/" o "se elije de tal conjunto el que satisface...").
+• Explicar el algoritmo, es decir, los pasos a seguir para obtener el resultado. 
+  No se pide que se "lea" el algoritmo ("se define una variable x", "se declara un for"),
+  si no que se explique ("se recorre la lista/el arreglo/" o "se elije de tal conjunto 
+  el que satisface...").
 • Escribir el algoritmo en el lenguaje de programación de la materia.
 ```
 

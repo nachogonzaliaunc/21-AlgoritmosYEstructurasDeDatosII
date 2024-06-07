@@ -22,7 +22,8 @@ typedef struct s_node * node_t;
 
 // Representation invariant
 static bool invrep(stringbuffer sb) {
-    if((sb->first == NULL && sb->last == NULL) && sb->size != 0) return false;
+    if(sb == NULL) return false;
+    else if((sb->first == NULL && sb->last == NULL) && sb->size != 0) return false;
     else if((sb->first != NULL || sb->last != NULL) && sb->size == 0) return false;
     else return true;
 }
